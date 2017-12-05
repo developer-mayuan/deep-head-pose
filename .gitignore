@@ -1,6 +1,11 @@
 *.pyc
 *.npy
 data/*
-output/*
+**/output/*
 *.jpg
 *.png
+
+videos/*
+bbox/*
+models/*
+snapshots/*
