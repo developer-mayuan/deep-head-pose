@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-    out = cv2.VideoWriter('output/video/output-%s.avi' % args.output_string,
+    out = cv2.VideoWriter('output/video/%s.avi' % args.output_string,
                           fourcc, args.fps, (width, height))
 
     # # Old cv2
@@ -109,7 +109,7 @@ if __name__ == '__main__':
     # fourcc = cv2.cv.CV_FOURCC(*'MJPG')
     # out = cv2.VideoWriter('output/video/output-%s.avi' % args.output_string, fourcc, 30.0, (width, height))
 
-    txt_out = open('output/video/output-%s.txt' % args.output_string, 'w')
+    txt_out = open('output/video/%s.txt' % args.output_string, 'w')
 
     frame_num = 1
 
@@ -201,10 +201,11 @@ if __name__ == '__main__':
                                      roll_predicted, (x_min + x_max) / 2,
                                      (y_min + y_max) / 2, size=bbox_width)
                 # plot axis
-                utils.draw_axis(frame, yaw_predicted, pitch_predicted,
-                                roll_predicted, tdx=(x_min + x_max) / 2,
-                                tdy=(y_min + y_max) / 2,
-                                size=bbox_height / 2)
+                # utils.draw_axis(frame, yaw_predicted, pitch_predicted,
+                #                 roll_predicted, tdx=(x_min + x_max) / 2,
+                #                 tdy=(y_min + y_max) / 2,
+                #                 size=bbox_height / 2)
+
                 # Plot expanded bounding box
                 cv2.rectangle(frame, (x_min, y_min), (x_max, y_max),
                               (0, 255, 0), 1)
