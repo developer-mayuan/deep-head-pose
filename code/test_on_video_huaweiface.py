@@ -122,7 +122,7 @@ if __name__ == '__main__':
     while idx < len(bbox_line_list):
         line = bbox_line_list[idx]
         line = line.strip('\n')
-        line = line.split(' ')
+        line = line.split('\t')
         det_frame_num = int(line[0])
 
         print frame_num
@@ -216,11 +216,11 @@ if __name__ == '__main__':
             # otherwise, break.
             try:
                 next_frame_num = int(
-                    bbox_line_list[idx + 1].strip('\n').split(' ')[0])
+                    bbox_line_list[idx + 1].strip('\n').split('\t')[0])
                 # print 'next_frame_num ', next_frame_num
                 if next_frame_num == det_frame_num:
                     idx += 1
-                    line = bbox_line_list[idx].strip('\n').split(' ')
+                    line = bbox_line_list[idx].strip('\n').split('\t')
                     det_frame_num = int(line[0])
                 else:
                     break

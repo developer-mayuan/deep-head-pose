@@ -116,7 +116,7 @@ while frame_num <= n_frames:
     print frame_num
 
     ret, frame = video.read()
-    if ret == False:
+    if ret is False:
         break
 
     cv2_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -167,7 +167,7 @@ while frame_num <= n_frames:
                 roll_predicted.data[0] * idx_tensor) * 3 - 99
 
             # Print new frame with cube and axis
-            txt_out.write(str(frame_num) + ' %f %f %f\n' % (
+            txt_out.write(str(frame_num) + '\t%f\t%f\t%f\n' % (
                 yaw_predicted, pitch_predicted, roll_predicted))
             utils.plot_pose_cube(frame, yaw_predicted, pitch_predicted,
                                  roll_predicted, (x_min + x_max) / 2,

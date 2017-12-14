@@ -149,10 +149,10 @@ if __name__ == '__main__':
         cv2_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
         while True:
-            x_min, y_min, x_max, y_max, conf = int(float(line[1])),\
-                                               int(float(line[2])),\
-                                               int(float(line[3])),\
-                                               int(float(line[4])),\
+            x_min, y_min, x_max, y_max, conf = int(float(line[1])), \
+                                               int(float(line[2])), \
+                                               int(float(line[3])), \
+                                               int(float(line[4])), \
                                                float(line[5])
 
             if conf > 0.98:
@@ -194,7 +194,7 @@ if __name__ == '__main__':
                     roll_predicted.data[0] * idx_tensor) * 3 - 99
 
                 # Print new frame with cube and axis
-                txt_out.write(str(frame_num) + ' %f %f %f\n' % (
+                txt_out.write(str(frame_num) + '\t%f\t%f\t%f\n' % (
                     yaw_predicted, pitch_predicted, roll_predicted))
                 # plot pose cube
                 utils.plot_pose_cube(frame, yaw_predicted, pitch_predicted,
