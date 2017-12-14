@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 import torch
 import torch.nn as nn
-from torch.autograd import Variable  # Automatic differentiation package
+from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision import transforms
 import torchvision
@@ -159,7 +159,6 @@ if __name__ == '__main__':
                                                shuffle=True,
                                                num_workers=2)
 
-    # CUDA semantics .cuda
     model.cuda(gpu)
     criterion = nn.CrossEntropyLoss().cuda(gpu)
     reg_criterion = nn.MSELoss().cuda(gpu)
