@@ -16,6 +16,7 @@ import torch.nn.functional as F
 import datasets, hopenet
 import torch.utils.model_zoo as model_zoo
 
+import pdb
 
 def parse_args():
     """Parse input arguments."""
@@ -204,6 +205,7 @@ if __name__ == '__main__':
             pitch_predicted = softmax(pitch)
             roll_predicted = softmax(roll)
 
+            # why - 99?
             yaw_predicted = torch.sum(yaw_predicted * idx_tensor,
                                       1) * 3 - 99
             pitch_predicted = torch.sum(pitch_predicted * idx_tensor,
@@ -225,7 +227,9 @@ if __name__ == '__main__':
             grad_seq = [torch.Tensor(1).cuda(gpu) for _ in
                         range(len(loss_seq))]
             optimizer.zero_grad()
+            # do back-propagation for generation gradients
             torch.autograd.backward(loss_seq, grad_seq)
+            # batch optimization by updating the parameters
             optimizer.step()
 
             if (i + 1) % 100 == 0:
