@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="40488e03-404b-4782-9a37-f7c762527853" name="GPU_cluster" url="http://10.193.38.8">
+        <fileTransfer host="10.193.38.8" port="22" rootFolder="/home/yuanma" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="3f04fcf0-d3ba-4fd1-8e1c-09301ab3305f" name="Mabuchi" url="http://mayuanakira.ddns.net">
+        <fileTransfer host="mayuanakira.ddns.net" port="22" rootFolder="/home/mayuan-mabuchi" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

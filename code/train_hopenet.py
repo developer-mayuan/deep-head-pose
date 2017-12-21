@@ -18,6 +18,7 @@ import torch.utils.model_zoo as model_zoo
 
 import pdb
 
+
 def parse_args():
     """Parse input arguments."""
     parser = argparse.ArgumentParser(
@@ -111,7 +112,7 @@ if __name__ == '__main__':
 
     if args.snapshot == '':
         load_filtered_state_dict(model, model_zoo.load_url(
-            'https://download.pytorch.org/models/resnet50-19c8e357.pth'))
+            'http://download.pytorch.org/models/resnet50-19c8e357.pth'))
     else:
         saved_state_dict = torch.load(args.snapshot)
         model.load_state_dict(saved_state_dict)

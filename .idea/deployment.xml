@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="GPU_cluster">
+    <serverData>
+      <paths name="GPU_cluster">
+        <serverdata>
+          <mappings>
+            <mapping deploy="Academy/deep-head-pose" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/data/Datasets/Headpose" local="$USER_HOME$/Datasets" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/code/output" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
