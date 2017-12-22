@@ -26,6 +26,7 @@ class Hopenet(nn.Module):
         self.fc_roll = nn.Linear(512 * block.expansion, num_bins)
 
         # Vestigial layer from previous experiments
+        # currently, not using?
         self.fc_finetune = nn.Linear(512 * block.expansion + 3, 3)
 
         for m in self.modules():
