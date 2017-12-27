@@ -17,5 +17,5 @@ model.load_state_dict(saved_state_dict)
 model.cuda(0)
 
 # export network
-torch.onnx.export(model, dummy_input, './output/hopenet_alpha1_onnx.pb',
+torch.onnx.export(model, dummy_input, './output/hopenet_alpha1_onnx.proto',
                   verbose=True)
